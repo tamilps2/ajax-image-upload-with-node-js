@@ -20,8 +20,18 @@ app.get('/', function (req, res) {
     // Don't bother about this :)
     var filesPath = path.join(__dirname, 'uploads/');
     fs.readdir(filesPath, function (err, files) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+
         files.forEach(function (file) {
             fs.stat(filesPath + file, function (err, stats) {
+                if (err) {
+                    console.log(err);
+                    return;
+                }
+
                 var createdAt = Date.parse(stats.ctime),
                     days = Math.round((Date.now() - createdAt) / (1000*60*60*24));
 
