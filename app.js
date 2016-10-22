@@ -7,6 +7,8 @@ var express = require('express'),
 
 var app = express();
 
+app.set('port', (process.env.PORT || 5000));
+
 // Tell express to serve static files from the following directories
 app.use(express.static('public'));
 app.use('/uploads', express.static('uploads'));
@@ -100,6 +102,6 @@ app.post('/upload_photos', function (req, res) {
     });
 });
 
-app.listen(3000, function() {
-    console.log('Express started at port 3000');
+app.listen(app.get('port'), function() {
+    console.log('Express started at port ' + app.get('port'));
 });
