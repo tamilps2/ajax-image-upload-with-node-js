@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Codedodle - Node.js image upload</title>
+    <meta name="description" content="Node.js image upload using express, jQuery using ajax." />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style type="text/css">body {background-color: #cccccc;}</style>
+</head>
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <div class="row">
+            <div class="col-md-12" style="text-align: center;">
+                <img src="http://1.bp.blogspot.com/-EmxXMCewQWk/VHA8Ea6NhrI/AAAAAAAAAbY/ygSNNtfjUp4/s1600/codedodle-logo.png" title="Codedodle" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <!-- Photos upload Form -->
+                <form id="upload-photos" method="post" action="/upload_photos" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="photos-input">File input</label>
+                        <input id="photos-input" type="file" name="photos[]" multiple="multiple" >
+                        <p class="help-block">You can upload up to 3 files.</p>
+                    </div>
+                    <input type="hidden" name="csrf_token" value="just_a_text_field" />
+                    <input class="btn btn-default" type="submit" name="Photo Uploads" value="Upload Photos" />
+                </form>
+                <br/>
+                <!-- Progress Bar -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                <span class="sr-only"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <!-- Photos Album Container -->
+        <div id="album" class="row"></div>
+        <br/><br/>
+        <!-- Copyright -->
+        <div class="row"><div class="col-md-12"><p style="text-align:center;">&copy; Codedodle 2016</p></div></div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/assests/js/app.js"></script>
+</body>
+</html>

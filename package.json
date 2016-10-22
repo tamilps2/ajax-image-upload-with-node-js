@@ -1,0 +1,30 @@
+{
+  "name": "node-image-upload",
+  "version": "1.0.0",
+  "description": "Node.js image upload using Express and Ajax",
+  "main": "app.js",
+  "engines": {
+    "node": "6.2.0"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Tamil Selvan K",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tamilps2/ajax-image-upload-with-node-js"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "file-type": "^3.9.0",
+    "formidable": "^1.0.17",
+    "read-chunk": "^2.0.0"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "ajax",
+    "image upload"
+  ]
+}
